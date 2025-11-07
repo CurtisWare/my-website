@@ -1,0 +1,35 @@
+---
+import "../styles/global.css";
+const { title = "My Website", description = "" } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav>
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="/shows/">Shows</a>
+        <a href="/gallery/">Gallery</a>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <p>© {new Date().getFullYear()} Your Name</p>
+      <div class="social-links">
+        <a href="https://twitter.com/yourhandle">Twitter</a>
+        <a href="https://instagram.com/yourhandle">Instagram</a>
+        <a href="https://github.com/yourhandle">GitHub</a>
+      </div>
+    </footer>
+  </body>
+</html>
